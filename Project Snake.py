@@ -59,10 +59,10 @@ def move():
         x = head.xcor()
         head.setx(x+20)
 wn.listen()
-wn.onkeypress(go_up, "w")
-wn.onkeypress(go_down, "s")
-wn.onkeypress(go_left, "a")
-wn.onkeypress(go_right, "d")
+wn.onkeypress(go_up, "up")
+wn.onkeypress(go_down, "down")
+wn.onkeypress(go_left, "left")
+wn.onkeypress(go_right, "right")
 while True:
     wn.update()
     if head.xcor()>290 or head.xcor()<-290 or head.ycor()>290 or head.ycor()<-290:
