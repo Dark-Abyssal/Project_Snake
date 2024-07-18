@@ -1,10 +1,10 @@
 # Project_Snake
 #get from https://pythonguides.com/snake-game-in-python/
 Movement for game = 
-'up'- W 
-'down'- S 
-'left'- A 
-'right'- D
+'up'- key(up)
+'down'- key(down)
+'left'- key(left)
+'right'- key(right)
 
 Goal of the game is to have the 'snake' eat the object and have it grow longer while avoiding the walls and it's body. 
 Attempt to make it as long as possible!
