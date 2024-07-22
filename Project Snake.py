@@ -3,6 +3,10 @@
 import turtle
 import time
 import random
+import pygame
+from pygame.locals import *
+from pygame import mixer
+
 delay = 0.1
 score = 0
 high_score = 0
@@ -11,6 +15,11 @@ wn.title("Snake Game")
 wn.bgcolor('black')
 wn.setup(width=600, height=600)
 wn.tracer(0)
+
+mixer.init()
+mixer.music.load('Music File/music background.mp3')
+mixer.music.play()
+
 #Snake head set up
 head = turtle.Turtle()
 head.speed(0)
