@@ -16,6 +16,7 @@ wn.bgcolor('black')
 wn.setup(width=600, height=600)
 wn.tracer(0)
 
+#Background music
 mixer.init()
 mixer.music.load('Music File/music background.mp3')
 mixer.music.play()
