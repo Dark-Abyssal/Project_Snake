@@ -40,7 +40,7 @@ score = 0
 high_score = 0
 
 # Load background music
-pygame.mixer.music.load('bensound-summer_mp3_music.ogg')  # Replace with your music file
+pygame.mixer.music.load('bensound-summer_mp3_music.mp3')  # Replace with your music file
 pygame.mixer.music.play(-1)  # -1 makes the music loop indefinitely
 
 # Function to display current score on screen
