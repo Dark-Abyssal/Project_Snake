@@ -2,3 +2,7 @@
 python>=3.6
 installation of pygame
 
+Must be able to import pygame_menu, themes (from pygame_menu), mixer (from pygame).
+
+And be able to import * from pygame.locals, import random and import pickle.
+
