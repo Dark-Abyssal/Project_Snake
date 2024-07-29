@@ -1,4 +1,3 @@
-
 #referenced from https://pythonguides.com/snake-game-in-python/
 import pygame
 import pygame_menu
@@ -75,6 +74,48 @@ def snake(snake_block, snake_list):
 def message(msg, color):
     mesg = font_style.render(msg, True, color)
     dis.blit(mesg, [dis_width / 12, dis_height / 3])
+
+# Function to display control instructions on the screen
+def display_controls():
+    dis.fill(white)
+    control_text = [
+        "Controls:",
+        "Use arrow keys to move the snake.",
+        "Eat the green food to grow longer.",
+        "Avoid running into the walls or yourself!",
+        "",
+        "Press C to Play Again if you lose.",
+        "Press Q to Quit the game once you lose.",
+        "",
+        "",
+        "Press C to return to Main Menu :)"
+    ]
+    title_text = font_style.render("Controls", True, black)
+    dis.blit(title_text, (dis_width / 3, 20))  # Center the title at the top
+
+    # Display each line of control instructions
+    y_offset = 80  # Initial vertical offset for instructions
+    for line in control_text:
+        control_msg = score_font.render(line, True, black)
+        dis.blit(control_msg, (dis_width / 6, y_offset))
+        y_offset += 40  # Increase vertical spacing between lines
+
+    pygame.display.update()  # Update the display to show the instructions
+
+    # Wait for player input to return to the main menu
+    waiting = True
+    while waiting:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_q:  # Option to quit
+                    pygame.quit()
+                    quit()
+                if event.key == pygame.K_c:  # Option to return to the main menu
+                    waiting = False  # Exit the loop
+
 
 # Main game loop function
 def gameLoop():
@@ -195,11 +236,18 @@ def gameLoop():
     quit()
 
 # Initialize main menu with Pygame Menu
-mainmenu = pygame_menu.Menu('WELCOME', 600, 600, theme=themes.THEME_SOLARIZED)
+mainmenu = pygame_menu.Menu('SNAKE', 600, 600, theme=themes.THEME_SOLARIZED)
 
 # Add buttons to the main menu
 mainmenu.add.button('Play', gameLoop)  # Start the game loop when 'Play' is clicked
+mainmenu.add.button('Controls', display_controls)
 mainmenu.add.button('Quit', pygame_menu.events.EXIT)  # Exit the game when 'Quit' is clicked
+
+
+def draw_title():
+    title_text = font_style.render("Snake Game", True, black)  # Create title text
+    text_rect = title_text.get_rect(center=(dis_width // 2, 50))  # Center the title horizontally
+    dis.blit(title_text, text_rect)  # Draw the title on the screen
 
 # Game loop for the main menu
 while True:
@@ -211,6 +259,7 @@ while True:
 
     # Update and draw the main menu
     dis.fill(white)
+    draw_title()  # Draw the title
     mainmenu.update(events)
     mainmenu.draw(dis)
     pygame.display.update()
