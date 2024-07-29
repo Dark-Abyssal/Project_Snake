@@ -10,7 +10,8 @@ Goal of the game is to have the 'snake' eat the object and have it grow longer w
 Attempt to make it as long as possible!
 Once the snake reaches a certain length, going in the opposite direction of where the snake is heading eg.(when going left, pressed right), will result in game over due to snake eating itself.
 
-![image](https://github.com/user-attachments/assets/c74475a5-04be-4f40-b3a3-f4a9da76b007)
+![image](https://github.com/user-attachments/assets/82f83d71-29f3-40b2-956d-e956b74eba92)
+
 
 
 
